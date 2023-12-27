@@ -1,0 +1,60 @@
+.main_about_us{
+    width:100%;
+    margin: 50px 50px;
+    display: flex;
+}
+
+.about_us_info{
+    width: 50%;
+    border: 2px solid black;
+    padding: 70px;
+    border-radius: 20% 5%;
+    animation: flicker 7s infinite;
+  }
+
+  @keyframes flicker {
+    0%, 19.999%, 21%, 23.999%, 24%, 27.999%, 28%, 32.999%, 33%, 34.999%, 35%, 45.999%, 46%, 50.999%, 51%, 55.999%, 56%, 100% {
+      box-shadow: 20px 0px 20px rgb(141, 6, 31);
+    }
+    20%, 22%, 24%, 28%, 33%, 35%, 36%, 46%, 51%, 56% {
+      box-shadow: none;
+    }
+  }
+
+  
+.about_us_info p{
+    color: white;
+    text-align: justify;
+}
+
+.about_us_info h2, h3{
+    color: #FF002E;
+   text-transform: uppercase;
+}
+
+.about_us_icons{
+    display: flex;
+    gap: 10px;
+    color: #FF002E;
+}
+
+.about_us_icons a{
+    cursor: pointer;
+    transition: 0.5s;
+    text-decoration: none;
+    color: #FF002E;
+}
+
+.about_us_icons a:hover{
+    transform: scale(1.2);
+}
+
+.about_us_img{
+    width: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+   
+}

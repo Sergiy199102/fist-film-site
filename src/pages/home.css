@@ -1,0 +1,145 @@
+.main-container {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .film-container {
+    padding: "20px";
+  }
+  
+  .button-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+  }
+
+  .popular_show_text {
+    color: white;
+    font-size: 28px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 45px;
+    margin-top: 30px;
+    --interval: 7s;
+    display: block;
+    text-shadow: 
+        0 0 1px var(--color1),
+        0 0 2px var(--color2),
+        0 0 4px var(--color3),
+        0 0 6px var(--color4);
+    will-change: filter, color;
+    filter: saturate(100%);
+    animation: flicker steps(100) var(--interval) 3s infinite;
+    color: lightgreen;
+    --color1: rgb(185, 26, 53);
+    --color2: rgb(97, 12, 12);
+    --color3: red;
+    --color4: rgb(56, 56, 56);
+  }
+  
+  @keyframes flicker {
+    50% {
+        color: white;
+        filter: saturate(200%) hue-rotate(20deg);
+    }
+  }
+  
+  .content {
+    gap: 30px;
+  }
+  
+  .mySwiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .actionslide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+  }
+  
+  .actionslide img {
+    display: block;
+    width: 100%;
+  }
+  
+  .mySwiper.initialized .actionslide {
+    transition: none !important;
+  }
+  
+  .my-custom-bullet {
+    width:8px; 
+    height: 8px;
+    display: inline-block;
+    background-color: transparent;
+    opacity: 0.5;
+    margin-right: 8px;
+    cursor: pointer;
+    border-radius: 0;
+    border: 2px solid rgb(87, 85, 85);
+  }
+  
+  .my-custom-bullet-active {
+    background-color: red;
+    opacity: 1;
+  }
+  
+  .names_genre {
+    text-Align: center;
+    margin-top: 40px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 38px;
+    --interval: 7s;
+    display: block;
+    text-shadow: 
+        0 0 1px var(--color1),
+        0 0 2px var(--color2),
+        0 0 4px var(--color3),
+        0 0 6px var(--color4);
+    will-change: filter, color;
+    filter: saturate(100%);
+    animation: flicker steps(100) var(--interval) 3s infinite;
+    color: lightblue;
+    --color1: rgb(185, 26, 53);
+    --color2: rgb(97, 12, 12);
+    --color3: red;
+    --color4: rgb(56, 56, 56);
+  }
+  @keyframes flicker {
+    50% {
+        color: white;
+        filter: saturate(200%) hue-rotate(20deg);
+    }
+  }
+  
+  .active-slide {
+  border-radius: 10px;
+  background-color: #191919;
+  box-shadow: 0px 0px 20px 10px rgba(255, 0, 0, 0.5);
+  animation: pulse 5.5s infinite;
+  }
+  
+  @keyframes pulse {
+  0% {
+      box-shadow: 0px 0px 20px 10px rgba(255, 0, 0, 0.5);
+  }
+  50% {
+      box-shadow: 0px 0px 20px 10px rgba(255, 0, 0, 0.2);
+  }
+  100% {
+      box-shadow: 0px 0px 20px 10px rgba(255, 0, 0, 0.5);
+  }
+
+  }
