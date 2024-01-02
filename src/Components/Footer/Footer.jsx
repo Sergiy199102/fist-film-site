@@ -66,8 +66,8 @@ const Footer = () => {
           <p>Watchit App</p>
         </div>
         <div className="app-icons">
-          <img className='googleic' src={GooglePlayIcon} alt="Google Play" />
-          <img className='appic' src={AppStoreIcon} alt="App Store" />
+        <img className='googleic' src={GooglePlayIcon} alt="Google Play" />
+<img className='appic' src={AppStoreIcon} alt="App Store" />
         </div>
       </div>
     </footer>

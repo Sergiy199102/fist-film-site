@@ -17,11 +17,11 @@ function getCharacterNames(selectedActor, actorData) {
 }
 
 function ActorItem() {
-    const { actorData } = useReqActor();
-    const [offset, setOffset] = useState(0);
-    const [isPrevButtonVisible, setIsPrevButtonVisible] = useState(false);
-    const [selectedActor, setSelectedActor] = useState(null);
-    const renderedActorIds = [];
+  const { actorData, loading } = useReqActor();
+  const [offset, setOffset] = useState(0);
+  const [isPrevButtonVisible, setIsPrevButtonVisible] = useState(false);
+  const [selectedActor, setSelectedActor] = useState(null);
+  const renderedActorIds = [];
 
     useEffect(() => {
       setIsPrevButtonVisible(offset > 0);

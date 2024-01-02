@@ -22,7 +22,6 @@ footer {
     text-align: start;
 }
 
-/*  ---------------------------- Left --------------------------------------- */
 
 .footer-links {
     margin-bottom: 30px;
@@ -45,8 +44,6 @@ footer {
     flex-direction: column;
 }
 
-/*  ---------------------------- Center --------------------------------- */
-
 .center-section {
     align-items: flex-start;
     margin-top: 50px;
@@ -68,16 +65,15 @@ footer {
 .social-icons img {
     margin-right: 10px;
     max-width: 100%;
-}
-
-.facehover,
-.twitterhover,
-.googlehover,
-.githover {
     transition: transform 0.8s ease-out;
 }
 
-/*  ----------------------------- Right ------------------------------------- */
+.facehover:hover,
+.twitterhover:hover,
+.googlehover:hover,
+.githover:hover {
+    transition: transform 1s ease-in-out, filter 2s ease-in-out;
+}
 
 .footer-section.right-section {
     display: flex;
@@ -93,9 +89,9 @@ footer {
     width: 120px;
     height: 50px;
     margin-right: 10px;
+    transition: transform 0.8s ease-out;
 }
 
-/*  -------------------------------- Hover --------------------------------- */
 
 .facehover:hover,
 .twitterhover:hover,

@@ -11,14 +11,12 @@ import {
 import SingleCard from "../Components/SingleCard/Singlecard";
 import { GENRES } from "../Constants/Constants";
 import { setGenre } from "../Store/SearchSlice";
-
 function Shows() {
   const genre = useSelector((state) => state.search.genre);
-
-  let url = `https://dolphin-app-pc6ii.ondigitalocean.app/article/byGenre/${genre}`;
-
+  const url = `https://dolphin-app-pc6ii.ondigitalocean.app/article/byGenre/${genre}`;
   const apiData = useRequest(url);
   const dispatch = useDispatch();
+
   const handleGenreChange = (e) => {
     dispatch(setGenre(e.target.value));
   };
@@ -31,17 +29,16 @@ function Shows() {
         <Select
           labelId="select-label"
           id="select"
-          value={genre?? GENRES[0]}
+          value={genre || GENRES[0]}
           label="Genre"
           onChange={handleGenreChange}
-          sx={{width: "100%"}}
+          sx={{ width: "100%" }}
         >
-          {GENRES.map((genre, index) => (
-            <MenuItem key={index}  value={genre}>
-              {genre}
+          {GENRES.map((genreItem) => (
+            <MenuItem key={genreItem} value={genreItem}>
+              {genreItem}
             </MenuItem>
           ))}
-          ;
         </Select>
       </FormControl>
       <Grid

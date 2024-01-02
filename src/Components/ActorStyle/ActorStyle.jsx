@@ -7,6 +7,8 @@ import DEFAULT_IMAGE from "../../images/actorlogo.png";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+// ... (imports)
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -21,49 +23,43 @@ const style = {
 };
 
 export default function ActorStyle({ character = {}, person = {} }) {
-
-  
   const [open, setOpen] = useState(false);
   const [actorId, setActorId] = useState(null);
   const [apiData, setApiData] = useState(null);
-  const handleOpen = (e) => {
-    setOpen(true);
-    setActorId(e.target.id);
-  };
-  const handleClose = () => setOpen(false);
-  
-  const image =
-    character?.image?.medium ?? person?.image?.medium ?? DEFAULT_IMAGE;
+  const [loading, setLoading] = useState(false);
 
-  console.log(actorId);
+  const handleOpen = () => {
+    setOpen(true);
+    setActorId(person.id);
+  };
+
+  const handleClose = () => setOpen(false);
+
   useEffect(() => {
     async function makeRequest() {
       try {
-        const response = await axios.get(`https://dolphin-app-pc6ii.ondigitalocean.app/article/actor/${actorId}`);
-        setApiData(response.data);
+        if (actorId) {
+          setLoading(true);
+          const response = await axios.get(`https://dolphin-app-pc6ii.ondigitalocean.app/article/actor/${actorId}`);
+          setApiData(response.data);
+        }
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     }
     makeRequest();
-
   }, [actorId]);
-
-  console.log(apiData);
-
 
   return (
     <>
       <Card sx={{ width: 350, height: 200, bgcolor: "#8d99ae" }}>
-        <CardActionArea
-          id={person.id}
-          onClick={handleOpen}
-          sx={{ display: "flex", height: "100%" }}
-        >
+        <CardActionArea onClick={handleOpen} sx={{ display: "flex", height: "100%" }}>
           <CardMedia
             component="img"
-            image={image}
-            alt="actor photo"
+            image={character?.image?.medium ?? person?.image?.medium ?? DEFAULT_IMAGE}
+            alt={`Photo of ${person.name}`}
             sx={{ width: "150px", height: "auto" }}
           />
           <CardContent sx={{ flexGrow: 1 }}>
@@ -83,12 +79,20 @@ export default function ActorStyle({ character = {}, person = {} }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            {apiData}
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
+          {loading ? (
+            <Typography variant="h6">Loading...</Typography>
+          ) : (
+            <>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                {/* Display relevant information from apiData */}
+                {apiData?.name || "Actor Name"}
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                {/* Display other relevant information from apiData */}
+                {apiData?.description || "Actor description"}
+              </Typography>
+            </>
+          )}
         </Box>
       </Modal>
     </>
