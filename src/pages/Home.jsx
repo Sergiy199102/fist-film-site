@@ -315,26 +315,7 @@ function Home() {
                       </Grid> 
               </div>
           </Grid>
-            
-              {visibleData.length > 0 && (
-              <div className="button-container">
-                <ButtonGroup>
-                <StyledButton type="button" onClick={handleSearch} variant="contained" disableElevation>
-    Search
-</StyledButton>
-
-
-                    <Button disabled style={{ margin: '0 10px', backgroundColor: 'rgba(0, 0, 0, 0.2)' ,color: 'white', fontWeight: 'bold', border: '1px solid red', borderRadius: '6px' }}>
-                        {`Page ${currentPage} of ${totalPages}`}
-                    </Button>
-                    <StyledButton onClick={goToNextPage} disabled={currentPage === totalPages} variant="contained" disableElevation>
-                    Next
-                    </StyledButton>
-                </ButtonGroup>
-                </div>
-                
-                )}
-              </Grid>
+          </Grid>
               </div>
               </>
         );

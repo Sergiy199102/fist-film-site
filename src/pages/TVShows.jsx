@@ -11,7 +11,6 @@ function TvShows() {
   const { popularData, loading, error } = usePopular();
 
   if (loading) {
-    // Display a loading spinner
     return (
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
         <CircularProgress />

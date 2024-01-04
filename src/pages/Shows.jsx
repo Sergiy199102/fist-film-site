@@ -11,18 +11,23 @@ import {
 import SingleCard from "../Components/SingleCard/Singlecard";
 import { GENRES } from "../Constants/Constants";
 import { setGenre } from "../Store/SearchSlice";
+
+
 function Shows() {
+  // Redux state and dispatch setup
   const genre = useSelector((state) => state.search.genre);
   const url = `https://dolphin-app-pc6ii.ondigitalocean.app/article/byGenre/${genre}`;
   const apiData = useRequest(url);
   const dispatch = useDispatch();
 
+  // Event handler for genre change
   const handleGenreChange = (e) => {
     dispatch(setGenre(e.target.value));
   };
 
   return (
     <Box sx={{ width: "95%", ml: "50px" }}>
+      {/* UI for showing genre and selecting genre */}
       <h1>Show by genre: {genre} </h1>
       <FormControl sx={{ display: "block", m: 1, width: "200px" }}>
         <InputLabel id="select-label">Genre</InputLabel>
@@ -41,6 +46,8 @@ function Shows() {
           ))}
         </Select>
       </FormControl>
+
+      {/* Grid layout for displaying cards */}
       <Grid
         container
         spacing={3}

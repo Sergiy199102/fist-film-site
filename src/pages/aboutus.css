@@ -6,7 +6,7 @@
 
 .about_us_info{
     width: 50%;
-    border: 2px solid black;
+    border: none;
     padding: 70px;
     border-radius: 20% 5%;
     animation: flicker 7s infinite;

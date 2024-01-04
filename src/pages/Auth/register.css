@@ -1,0 +1,18 @@
+.registration-container {
+  padding: 50px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-input {
+  width: 100%;
+}
+
+.submit-button {
+  color: red;
+  margin-top: 10px;
+}

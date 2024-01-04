@@ -4,7 +4,7 @@ import axios from "axios";
 import SingleItemHeader from "../Components/SingleItemHeader/SingleItemHeader";
 import SingleItemTabs from "../Components/SingleItemTabs/SingleItemTabs";
 import ActorItem from "../Components/ActorItem/ActorItem";
-
+import { Grid } from "@mui/material";
 
 function FilmDetails() {
     const { filmId } = useParams();
@@ -60,7 +60,8 @@ function FilmDetails() {
               summary={summary}
               series={series}
           />
-          <ActorItem />
+          
+       <ActorItem/>
         </>
       );
     }

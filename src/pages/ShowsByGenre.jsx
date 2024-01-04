@@ -2,8 +2,8 @@ import { Grid } from "@mui/material";
 import SingleCard from '../Components/SingleCard/Singlecard';
 import useReqGenre from "../hooks/useReqGenre";
 import { useParams } from "react-router-dom";
-
 import BackBanner from '../Img/OIP.jpg';
+
 
 function ShowsByGenre () {
     const { genres } = useParams();
